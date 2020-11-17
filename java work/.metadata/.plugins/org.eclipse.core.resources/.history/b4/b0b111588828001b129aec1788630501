@@ -27,12 +27,13 @@ public class ForEachExam {
 		}
 		
 		int a = 10;
-		int b = a; // 기본 데이터 타입이기 때문에 값을 복사.
+		int b = a;
 		System.out.println(a + ", " + b);
 		System.out.println(System.identityHashCode(a));
 		System.out.println(System.identityHashCode(b));
 		
-		a = 11;
+//		a = 11;
+		b = 11;
 		System.out.println(a + ", " + b);
 		
 	}

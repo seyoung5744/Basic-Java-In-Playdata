@@ -1,0 +1,7 @@
+package day02;
+
+public class ArrayExam03 {
+	public static void main(String[] args) {
+		int [][][][] arr;
+	}
+}
