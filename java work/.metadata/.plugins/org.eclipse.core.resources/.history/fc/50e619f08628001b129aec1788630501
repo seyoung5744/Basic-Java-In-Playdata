@@ -19,9 +19,6 @@ public class ForEachExam {
 			System.out.println(arr[i]);
 		}
 		
-		System.out.println();
-		
-		// for-each¹®
 		for (int a : arr){
 			System.out.println(a);
 		}
