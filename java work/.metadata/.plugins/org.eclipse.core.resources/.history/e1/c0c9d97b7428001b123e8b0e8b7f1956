@@ -1,0 +1,18 @@
+package day02;
+
+public class Exam02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1-100 까지의 짝수의 합을 구해주세요. 
+		int evenSum = 0;
+		int number = 100;
+		for(int i = 1; i <=number; i++) {
+			if(i % 2 ==0)
+				evenSum += i;//evenSum = evenSum + i; 
+		}
+		
+		System.out.println("짝수의 합:"+evenSum);
+	}
+
+}
