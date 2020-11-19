@@ -1,0 +1,26 @@
+package day04;
+
+public class Car {
+	private String name;
+	private int speed;
+	static int numberOfCars;
+	
+	public Car() {
+		this.name = "MyCar";
+		this.speed = 0;
+		numberOfCars++;
+	}
+	
+	public Car(String name) {
+		this.name = name;
+		this.speed = 0;
+		numberOfCars++;
+		System.out.println("name을 받아오는 생성자 실행");
+	}
+	
+	public void setName(String name) { this.name = name; }
+	
+	public void setSpeed(int speed) { this.speed = speed; }
+	
+	public int getSpeed() { return this.speed; }
+}

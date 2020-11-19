@@ -1,0 +1,16 @@
+package day04;
+
+public class WatchTV {
+	public static void main(String[] args) {
+		TV tv = new TV();
+		
+		tv.show();
+		
+		tv.channelUp();
+		tv.volumeDown();
+		tv.powerOn();
+		
+		tv.channelUp();
+		tv.volumeDown();
+	}
+}

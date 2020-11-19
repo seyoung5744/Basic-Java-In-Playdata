@@ -1,0 +1,50 @@
+package day04;
+
+/*
+ * 	133pg 실습예제7
+ */
+public class TV {
+	private int channel;
+	private int volume;
+	private boolean power;
+	
+	public TV() {
+		this(7, 20, false);
+	}
+	public TV(int channel, int volume, boolean power) {
+		this.channel = channel;
+		this.volume = volume;
+		this.power = power;
+	}
+	
+	public void channelUp() { this.channel++; }
+	public void channelDown() { this.channel--;	}
+	
+	public void volumeUp() { this.volume++;	}
+	
+	public void volumeDown() { this.volume--; }
+	
+	public void powerOn() { this.power = true;	}
+	
+	public void powerOff() { this.power = false; }
+	
+	public void setChannel(int channel) { this.channel = channel; }
+	public int getChannel() { return this.channel; }
+	
+	public boolean isPower() { return this.power; }
+	
+	public int getVolume() { return this.volume; }
+	
+	public void showChannel() {
+		System.out.println(channel + "번입니다.");
+	}
+	
+	public void showVolume() {
+		System.out.println(this.volume + "입니다.");
+	}
+	
+	public void showPower() {
+		System.out.println("티비가 꺼졌습니다.");
+		System.out.println("티기가 켜졌습니다.");
+	}
+}

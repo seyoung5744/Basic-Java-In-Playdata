@@ -4,4 +4,7 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="day02.PlusMachine"/>
 <fullyQualifiedTypeName name="day02.ArrayUtil"/>
+<fullyQualifiedTypeName name="day04.ArrayUtils"/>
+<fullyQualifiedTypeName name="day04.Shape"/>
+<fullyQualifiedTypeName name="day04.실습예제3.Point"/>
 </qualifiedTypeNameHistroy>

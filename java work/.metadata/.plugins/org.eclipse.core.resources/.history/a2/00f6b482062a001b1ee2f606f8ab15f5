@@ -1,0 +1,23 @@
+package day04;
+
+public class Goods {
+	private String name;
+	private int price;
+	private int countStock;
+	private int countSold;
+	
+	public Goods() {
+		
+	}
+	public Goods(String name) { 
+		this.name = name;
+	}
+	public Goods(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+	
+	public String getName() { return name; }
+	public void setName(String name) { this.name = name; }
+	
+}

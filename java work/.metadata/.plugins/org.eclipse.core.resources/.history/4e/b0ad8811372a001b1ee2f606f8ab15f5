@@ -1,0 +1,18 @@
+package day04;
+
+class Parent{
+	int i = 10;
+	
+	public int getI() {
+		return i;
+	}
+}
+
+class Child extends Parent{
+	
+}
+public class Exam02 {
+	public static void main(String[] args) {
+		
+	}
+}

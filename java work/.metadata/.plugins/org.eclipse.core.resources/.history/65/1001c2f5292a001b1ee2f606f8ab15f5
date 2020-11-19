@@ -1,0 +1,12 @@
+package day04;
+
+public class TVTest {
+	public static void main(String[] args) {
+		TV tv = new TV();
+		
+		tv.show();
+		
+		tv.channelUp();
+		tv.
+	}
+}

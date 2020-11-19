@@ -1,0 +1,11 @@
+package day04;
+
+public class ShapeTest {
+	public static void main(String[] args) {		
+		Shape sp = new Shape(1, 2);
+		sp.show();
+		sp.show(false);
+	}
+	
+	
+}

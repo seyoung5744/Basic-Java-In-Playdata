@@ -1,0 +1,18 @@
+package day04;
+
+public class GoodsApp {
+	public static void main(String[] args) {
+		Goods camera = new Goods();
+		
+		camera.setName("Nikon");
+		camera.setPrice(40000);
+		camera.setCountStock();
+		camera.setCountSold();
+		
+		camera.printGoods();
+		
+		Goods phone = new Goods("¾ÆÀÌÆù");
+		
+		Goods camera2 = new Goods("samsung",200000, 20, 40);
+	}
+}

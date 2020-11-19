@@ -1,0 +1,7 @@
+package day04;
+
+public class ShapeTest {
+	Shape shape = new Shape(1, 2);
+	
+	shape.show(false);
+}
