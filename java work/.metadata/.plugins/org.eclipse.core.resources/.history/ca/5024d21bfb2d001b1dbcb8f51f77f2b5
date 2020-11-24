@@ -1,0 +1,7 @@
+package day06;
+
+interface test {
+	public static void print() {
+		System.out.println("test");
+	}
+}

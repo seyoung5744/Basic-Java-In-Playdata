@@ -1,0 +1,20 @@
+package day05;
+
+class Person2{
+	private String name;
+	private String id;
+	
+	public Person2(String name) {
+		this.name = name;
+	}
+}
+
+class Student2 extends Person2 {
+	private String grade;
+	private String major;
+	
+	public 
+}
+public class UpcastingTest {
+
+}

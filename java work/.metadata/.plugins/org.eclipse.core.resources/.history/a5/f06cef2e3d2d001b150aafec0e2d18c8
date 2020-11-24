@@ -1,0 +1,31 @@
+package day05;
+
+class Person2{
+	public String name;
+	private String id;
+	
+	public Person2(String name) {
+		this.name = name;
+	}
+}
+
+class Student2 extends Person2 {
+	private String grade;
+	private String major;
+	
+	public Student2(String name) {
+		super(name);
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+}
+public class UpcastingTest {
+	public static void main(String[] args) {
+		Person2 p ;
+		Student2 s = new Student2("¿ø¼¼");
+		p = s;
+		System.out.println(p.name);
+		((Student2) p).setGrade("A");
+	}
+}

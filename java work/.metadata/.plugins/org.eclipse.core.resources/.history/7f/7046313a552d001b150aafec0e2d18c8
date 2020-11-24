@@ -1,0 +1,22 @@
+package day05;
+
+abstract class Shape{
+	public abstract double calculateArea();
+}
+
+class Circle extends Shape{
+	private int radius;
+	
+	public Circle(int radius) {
+		this.radius = radius;
+	}
+	
+	@Override
+	public double calculateArea() {
+		return radius * raduis * 3.14;
+	}
+	
+}
+public class ShapeTest {
+
+}

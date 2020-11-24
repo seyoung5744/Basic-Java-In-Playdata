@@ -1,0 +1,10 @@
+package day06;
+
+public class testMain implements test{
+	public static void main(String[] args) {
+		test t = new test();
+		
+		t.D();
+		test.print();
+	}
+}

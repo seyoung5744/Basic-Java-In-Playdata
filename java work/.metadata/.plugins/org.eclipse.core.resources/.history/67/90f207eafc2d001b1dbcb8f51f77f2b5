@@ -1,0 +1,10 @@
+package day06;
+
+interface test {
+	public default void D() {
+		System.out.println("디폴트임.");
+	}
+	public static void print() {
+		System.out.println("test");
+	}
+}

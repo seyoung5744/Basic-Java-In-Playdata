@@ -1,0 +1,28 @@
+package day05;
+class Parent{
+	int i;
+	public Parent() {
+		System.out.println("1");
+	}
+	
+	public Parent(int i ) {
+		this.i = i;
+		System.out.println("Parent " + i);
+	}
+}
+
+class Child extends Parent{
+	int i ;
+	public Child() {
+		System.out.println("child()");
+	}
+	public Child(int i ) {
+		this.i = i;
+		System.out.println("child " + i );
+	}
+}
+public class ParentTest {
+	public static void main(String[] args) {
+		Child c2 = new Child(10);
+	}
+}
