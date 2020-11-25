@@ -13,7 +13,9 @@ public class Bank {
 
 	
 	// https://coding-factory.tistory.com/552 (자바 linked list)
+	// 이 배열안에 고객이 있으면 = 은행에서 업무를 보고 있는거고, 지워지면 = 업무 끝나고 은행에서 나간거
 	LinkedList<Customer> customerArray = new LinkedList<Customer>(); // 고객(배열)
+	
 //	employeeArray(직원(배열)
 //	bankBookArray(통장들(배열)
 //	transactionHistoryArray(거래내역(배열)
@@ -30,10 +32,13 @@ public class Bank {
 	public void setCustomer(Customer customer) {
 		this.customerArray.add(customer);
 	}
+	
 	// 고객 요소 삭제 - 고객 은행 업무가 끝나면 고객 배열에서 삭제
-	public void removeCustomer(String customerName) {
+	public void removeCustomer(Customer customer) {
+		// 이 배열에서 고객을 찾을 건데
+		// equals을 오버라이드하면 이름, 생년월일로 객체 비교를 비교 부탁드려요
 		for(int i = 0; i < customerArray.size(); i++) {
-			
+//			customerArray.get(i).equals(customer);
 		}
 	}
 	// 은행 오픈 시간 출력
@@ -57,10 +62,13 @@ public class Bank {
 		case 1:
 			// 일반 상담 객체 생성
 //			NormalConsulting normalConsulting = new NormalConsulting();
+//			normalConsulting.start();
 			break;
 		case 2:
 			// 금융 상담 객체 생성
 //			FinanceConsulting financeConsulting = new FinanceConsulting();
+//			financeConsulting.start();
+			// 상담에 대한 구체적인 생성한 상담 클래스에서 진행.
 			break;
 		default:
 			System.out.println("잘못 된 메뉴입니다.");

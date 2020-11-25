@@ -9,7 +9,6 @@ INDEX VERSION 1.131+C:\Users\wonseyoung\my_Git_Hub\Basic-Java-In-Playdata\java w
 2270713507.index
 2245724659.index
 3445611512.index
-4291152803.index
 402791964.index
 4159925062.index
 2922245217.index

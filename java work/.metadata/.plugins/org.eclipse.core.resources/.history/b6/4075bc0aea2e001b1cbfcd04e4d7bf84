@@ -1,0 +1,21 @@
+package day07;
+
+public class Pen {
+	private String color;
+	private String company;
+	
+	public Pen(String color, String company) {
+		this.color = color;
+		this.company = company;
+	}
+	
+	public static void main(String[] args) {
+		Pen p1 = new Pen("파랑","모나미");
+		Pen p2 = new Pen("파랑","모나미");
+		Pen p3 = new Pen("파랑","모나미");
+		
+		if(p1 == p2) {
+			System.out.println("같아요~~");
+		}
+	}
+}
