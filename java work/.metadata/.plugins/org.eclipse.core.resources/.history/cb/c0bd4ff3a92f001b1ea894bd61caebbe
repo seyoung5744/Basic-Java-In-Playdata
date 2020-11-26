@@ -1,0 +1,23 @@
+package day08;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CollectionExam01 {	
+	public static void main(String[] args) {		
+		// ArrayList...
+		
+		
+		String[] strArr = new String[3];
+		strArr[0] = "kang";
+		strArr[1] = "kim";
+		strArr[2] = "hone";
+		
+		//strArr[3] = "lee";
+		
+		List<String> list = new ArrayList<>();
+		list.add("kang");
+		
+	}
+	
+}

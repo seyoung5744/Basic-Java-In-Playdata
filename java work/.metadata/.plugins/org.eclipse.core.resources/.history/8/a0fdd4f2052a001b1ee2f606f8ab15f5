@@ -1,7 +1,0 @@
-package day04;
-
-public class GoodsApp {
-	public static void main(String[] args) {
-		Goods camera
-	}
-}

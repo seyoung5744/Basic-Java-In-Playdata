@@ -1,0 +1,16 @@
+package day08;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CollectionExam01 {
+	// ArrayList...
+	
+	String[] strArr = new String[3];
+	strArr[0] = "kang";
+	strArr[1] = "kim";
+	strArr[2] = "hone";
+	
+	List list = new ArrayList();
+	
+}

@@ -1,9 +1,0 @@
-package day04;
-
-public class ShapeTest {
-	Shape sp = new Shape(1, 2);
-	
-	sp.show();
-	
-	
-}

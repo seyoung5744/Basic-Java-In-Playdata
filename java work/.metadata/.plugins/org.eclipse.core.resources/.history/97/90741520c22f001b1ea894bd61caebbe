@@ -1,0 +1,14 @@
+package day08;
+
+
+public class test2 {
+	public static void main(String[] args) {
+		int i = 10;
+		double b;
+		
+		b = i;
+		
+		System.out.println(b);
+		System.out.println(i);
+	}
+}

@@ -1,0 +1,30 @@
+package day08;
+
+class Person{
+	String name;
+	String id;
+	public Person(String name) {
+		this.name = name;
+	}
+}
+
+class Student3 extends Person{
+	String grade;
+	String major;
+	
+	public Student3() {
+		// TODO Auto-generated constructor stub
+	}
+}
+
+public class test2 {
+	public static void main(String[] args) {
+		int i = 10;
+		double b;
+		
+		b = i;
+		
+		System.out.println(b);
+		System.out.println(i);
+	}
+}
