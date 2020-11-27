@@ -1,0 +1,13 @@
+package day09;
+import java.io.FileReader;
+
+public class IOExam04 {
+	// 파일로부터 읽어서 파일에 쓰는 것을 구현해보세요.
+	public static void main(String[] args) {
+
+	}
+
+	public void fileCopy(String inputFile, String ouputFile) {
+		FileReader fr = new FileReader(new )
+	}
+}

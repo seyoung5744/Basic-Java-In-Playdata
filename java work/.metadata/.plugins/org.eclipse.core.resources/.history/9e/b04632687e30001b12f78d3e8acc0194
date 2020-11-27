@@ -1,0 +1,22 @@
+package day09;
+
+import java.io.BufferedReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class IOExam05 {
+	public static void main(String[] args) {
+		URL url = null;
+		try {
+			// url 추상화
+			url = new URL("https://www.naver.com/"); 
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+		// 해당 페이지에서 한줄씩
+		url.openStream(); 
+	}
+}
