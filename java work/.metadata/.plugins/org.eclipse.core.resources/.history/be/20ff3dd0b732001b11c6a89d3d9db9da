@@ -1,8 +1,6 @@
 package day10;
 
-import java.io.Serializable;
-
-public class Phone implements Serializable{
+public class Phone {
 	private String name;
 	private String phoneNum;
 	

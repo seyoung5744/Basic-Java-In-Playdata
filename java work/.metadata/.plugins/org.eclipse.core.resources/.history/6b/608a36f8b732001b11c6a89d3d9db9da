@@ -1,0 +1,8 @@
+package day10;
+
+public class ObjectStreamExam {
+	public static void main(String[] args) {
+		// 객체도 파일 저장 가능
+		List<>
+	}
+}

@@ -1,0 +1,19 @@
+package day10;
+
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+
+public class DataInOutExam {
+	public static void main(String[] args) {
+		try (
+				DataOutputStream dos = new DataOutputStream(new FileOutputStream("data.txt"));
+				){
+			dos.writeBoolean(true);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+			
+		}
+	}
+}

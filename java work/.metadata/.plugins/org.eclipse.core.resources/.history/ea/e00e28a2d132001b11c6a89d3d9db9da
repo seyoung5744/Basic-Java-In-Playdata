@@ -18,30 +18,11 @@ public class PhoneMgr {
 	// ex ) 원세영 : 010 - 111- 1111
 	public static void inputPhone(int count, String fileName) {
 		String name, phoneNum;
-		
-		
-		// 데코레이터 패턴 
-		// 수돗꼭지  - 파이프(물을 가져오죠), 수돗꼭지 - 물을 틀고 끄고,
-		
-		// System.in - 키보드로 입력한다.
-		// System.in을 통하여 접근되는 객체는 자바 버추얼 머신이 메모리로 올라오면서 미리 객체를 생성해 놓는, 대표적인 객체이다. 자료형이 InputStream이기 때문에 바이트 단위로만 입출력이 허용된다.
-
-		// InputStreamReader - 키보드로 입력할 것을 
-		// InputStreamReader 는 바이트 스트림에서 문자 스트림으로,
-
-		// BufferedReader 는 문자 입력 스트림으로부터 문자를 읽어 들이거나
-		
-		// 키보드로 입력하면 
-		// 1. 입력한 것들이 바이트 단위로 변경된다. System.in
-		// 2. 바이트 단위를 문자 단위로 - InputStreamReader
-		// 3. 스트림에 있는 것들이 일단 다 버퍼로 가니깐. 버퍼에 있는 것 읽어들인다.
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 				PrintWriter pw = new PrintWriter(fileName)) {
-			
-			
 			for (int i = 0; i < count; i++) {
 				System.out.print("이름 : ");
-				name = br.readLine(); // read
+				name = br.readLine();
 				System.out.print("전화전호 : ");
 				phoneNum = br.readLine();
 
