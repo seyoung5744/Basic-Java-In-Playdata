@@ -1,0 +1,22 @@
+package day10;
+
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+
+public class PhoneMgr {
+	// count 만큼 전화번호를 입력받는 기능을 작성. (IO 이용)
+	// 이름, 전화번호를 입력 받음
+	// 입력 받은 파일 명으로 파일에 저장
+	// ex ) 원세영 : 010 - 111- 1111
+	public static void inputPhone(int count, String fileName) {
+		BufferedOutputStream bs = new BufferedOutputStream(new FileOutputStream(fileName));
+		
+		
+	}
+	
+	// public static void printPhoneList(String fileName)
+	// 매개 변수로 입력받은 파일명에 해당하는 파일을 읽어서 출력하세요.
+	
+	// public static List<Phone> getPhoneList(String fileName)
+	// 파일을 읽어서, 읽은 내용으로 Phone객체를 생상하고, Phone객체를 List에 담아서 반환.
+}
