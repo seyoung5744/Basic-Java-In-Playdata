@@ -1,8 +1,0 @@
-package day06;
-
-public class testMain implements test{
-	public static void main(String[] args) {
-		super.D();
-		test.print();
-	}
-}

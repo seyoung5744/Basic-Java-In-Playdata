@@ -1,0 +1,9 @@
+package bank;
+
+public class BankUI {
+	public static void main(String[] args) {
+		while(true) {
+			System.out.print("1. 회원가입\n2. 상담\n3. 거래\n4. 종료");
+		}
+	}
+}

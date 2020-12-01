@@ -1,8 +1,15 @@
 package bank;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Bank {
+	Scanner sc = new Scanner(System.in);
 	private final static String openTime = "09시00분"; // 오픈 시간(6) 
 	private final static String closeTime = "16시00분"; // 마감 시간
 	
@@ -10,13 +17,12 @@ public class Bank {
 	private String branchName; // 지점명
 	private String bankAddress; // 은행 주소
 	private int budget; // 은행 총 예산
-
+	Set<Integer> giveNum = new HashSet<>(); // 대기번호
 	
 	// https://coding-factory.tistory.com/552 (자바 linked list)
 	// 이 배열안에 고객이 있으면 = 은행에서 업무를 보고 있는거고, 지워지면 = 업무 끝나고 은행에서 나간거
 	LinkedList<Customer> customerArray = new LinkedList<Customer>(); // 고객(배열)
 	
-//	employeeArray(직원(배열)
 //	bankBookArray(통장들(배열)
 //	transactionHistoryArray(거래내역(배열)
 	
@@ -61,10 +67,12 @@ public class Bank {
 		switch(menu) {
 		case 1:
 			// 일반 상담 객체 생성
+			System.out.println("일반 상담 진행~~");
 //			NormalConsulting normalConsulting = new NormalConsulting();
 //			normalConsulting.start();
 			break;
 		case 2:
+			System.out.println("금융 상담 진행~~");
 			// 금융 상담 객체 생성
 //			FinanceConsulting financeConsulting = new FinanceConsulting();
 //			financeConsulting.start();
@@ -73,5 +81,19 @@ public class Bank {
 		default:
 			System.out.println("잘못 된 메뉴입니다.");
 		}
+	}
+	
+	public void giveNum() {
+//		while (set.size() < 5) {a
+		int d = (int) (Math.random() * 10) + 1; // 1~10사이
+		giveNum.add(d);
+
+		System.out.println("대기번호 : " + d);
+		System.out.println(giveNum);
+//		}
+//		List<Integer> list = new ArrayList<>(set);
+//		Collections.sort(list);
+//		System.out.println(list);
+
 	}
 }
