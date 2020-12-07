@@ -15,8 +15,8 @@ public class DeptDAO {
 
 	// 지금 코드에선 DB에 연결 종료하는 코드가 중복되서 불편하다...그래서 DBUtil이라고 따고 분리.
 	
-	private Connection conn = null;
-	private PreparedStatement ps = null;
+//	private Connection conn = null;
+//	private PreparedStatement ps = null;
 //
 //	public void insertDept(int deptno, String dname, String loc) {
 //		// 1. DB접속 Connection 객체를 얻어온다.
@@ -107,7 +107,8 @@ public class DeptDAO {
 	 * DBUtil 만들고 재수정한 코드
 	 */
 	
-	public void insertDept(int deptno, String dname, String loc) {
+	public void insertDept(DeptDTO dept) {
+		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
 		// 1. DB접속 Connection 객체를 얻어온다.
@@ -118,12 +119,17 @@ public class DeptDAO {
 			ps = conn.prepareStatement(sql);
 			
 			// 값에 대한 바인딩
-			ps.setInt(1, deptno);
-			ps.setString(2, dname);
-			ps.setString(3, loc); // query 까지 만들어두고 실행은 안한 상태
+			ps.setInt(1, dept.getDeptno());
+			ps.setString(2, dept.getDname());
+			ps.setString(3, dept.getLoc()); // query 까지 만들어두고 실행은 안한 상태
 
 		// 3. 쿼리 실행
-			ps.executeUpdate();
+			int count = ps.executeUpdate();
+			if(count > 0) {
+				System.out.println(count + "건 입력 성공!");
+			}else {
+				System.out.println("입력 실패!!");
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -134,6 +140,7 @@ public class DeptDAO {
 	}
 
 	public int updateDept(int deptno, String dname, String loc) {
+		Connection conn = null;
 		PreparedStatement ps = null;
 		int count = 0;
 		try {
