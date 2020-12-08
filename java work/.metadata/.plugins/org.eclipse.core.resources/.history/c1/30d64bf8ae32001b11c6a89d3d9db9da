@@ -1,6 +1,0 @@
-package day10;
-
-public class Phone {
-	private String name;
-	private String phoneNum;
-}

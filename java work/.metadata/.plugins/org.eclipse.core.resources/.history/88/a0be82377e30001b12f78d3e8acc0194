@@ -1,9 +1,0 @@
-package day09;
-
-import java.net.URL;
-
-public class IOExam05 {
-	public static void main(String[] args) {
-		URL url = new URL("https://www.naver.com/");
-	}
-}

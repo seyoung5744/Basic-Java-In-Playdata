@@ -3,6 +3,7 @@ package jdbc_exam;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // DAO의 단위는 테이블당 하나
@@ -14,7 +15,7 @@ public class DeptDAO {
 	// => 일 하나 할때마다 DB에 connect을 하면 드는 비용이 많기 때문에 미리 연결해두고 거기에서 할당받아 사용.
 
 	// 지금 코드에선 DB에 연결 종료하는 코드가 중복되서 불편하다...그래서 DBUtil이라고 따고 분리.
-	
+
 //	private Connection conn = null;
 //	private PreparedStatement ps = null;
 //
@@ -102,39 +103,39 @@ public class DeptDAO {
 //		}
 //		return count;
 //	}
-	
+
 	/*
 	 * DBUtil 만들고 재수정한 코드
 	 */
-	
+
 	public void insertDept(DeptDTO dept) {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
-		// 1. DB접속 Connection 객체를 얻어온다.
+			// 1. DB접속 Connection 객체를 얻어온다.
 			conn = DBUtil.getConnection();
 
-		// 2. 쿼리 작성
+			// 2. 쿼리 작성
 			String sql = "insert into dept(deptno, dname, loc) values (?,?,?)";
 			ps = conn.prepareStatement(sql);
-			
+
 			// 값에 대한 바인딩
 			ps.setInt(1, dept.getDeptno());
 			ps.setString(2, dept.getDname());
 			ps.setString(3, dept.getLoc()); // query 까지 만들어두고 실행은 안한 상태
 
-		// 3. 쿼리 실행
+			// 3. 쿼리 실행
 			int count = ps.executeUpdate();
-			if(count > 0) {
+			if (count > 0) {
 				System.out.println(count + "건 입력 성공!");
-			}else {
+			} else {
 				System.out.println("입력 실패!!");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-		// 4. 접속 종료!!
+			// 4. 접속 종료!!
 			DBUtil.close(conn, ps);
 		}
 	}
@@ -144,9 +145,9 @@ public class DeptDAO {
 		PreparedStatement ps = null;
 		int count = 0;
 		try {
-		// 1. DB접속 Connection 객체를 얻어온다.
+			// 1. DB접속 Connection 객체를 얻어온다.
 			conn = DBUtil.getConnection();
-		// 2. 쿼리 작성
+			// 2. 쿼리 작성
 			String sql = "update dept set dname = ? loc = ?where deptno = ?";
 			ps = conn.prepareStatement(sql);
 			// 값에 대한 바인딩
@@ -154,15 +155,55 @@ public class DeptDAO {
 			ps.setString(2, loc);
 			ps.setInt(3, deptno);
 
-		// 3. 쿼리 실행
+			// 3. 쿼리 실행
 			count = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-		// 4. 접속 종료!!
+			// 4. 접속 종료!!
 			DBUtil.close(conn, ps);
 		}
-		
+
 		return count;
 	}
+
+	// 조회 (한건)
+	public DeptDTO getDept(int deptno) {
+		DeptDTO dept = null;
+		// 1. 선언
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			// 2. 접속
+			conn = DBUtil.getConnection();
+
+			// 3. 쿼리 작성
+			String sql = "select deptno, dname, loc from dept where deptno = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, deptno);
+
+			// 4. 실행
+			rs = ps.executeQuery();
+
+			// 5. 결과 값 얻어오기
+			if (rs.next()) {
+				dept = new DeptDTO();
+				dept.setDeptno(rs.getInt(1));
+				dept.setDname(rs.getString(2));
+				dept.setLoc(rs.getString(3));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 6. 접속 종료
+			DBUtil.close(conn, ps, rs);
+		}
+
+		return dept;
+	}
+
+	// 여러 건 조회
 }

@@ -3,6 +3,7 @@ package jdbc_exam;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class DBUtil {
 	static String URL = "jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC"; // 보통 약속된 형식이 있음. 각 DBMS마다 조금씩 차이는 있지만
@@ -40,5 +41,15 @@ public class DBUtil {
 			}
 		}
 		close(conn);
+	}
+	public static void close(Connection conn, PreparedStatement ps, ResultSet rs) {
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		close(conn, ps);
 	}
 }
